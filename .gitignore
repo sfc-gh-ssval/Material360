@@ -1,0 +1,15 @@
+.DS_Store
+.snowflake/
+__pycache__/
+*.pyc
+.env
+*.log
+
+# Local / customer-specific artifacts (kept on disk, not published)
+DEMO_TALK_TRACK.md
+docs/Material360-Overview.html
+docs/Material360-Overview-Screenshots.html
+docs/screenshot-*.png
+frontend/public/*-logo.svg
+node_modules/
+dist/

@@ -1,0 +1,119 @@
+.cortex-clarification {
+  border: 1px solid #e2e8f0;
+  border-radius: 12px;
+  padding: 16px;
+  background: #f8fafc;
+  max-width: 480px;
+}
+
+.cortex-clarification__question {
+  font-size: 14px;
+  font-weight: 500;
+  color: #1e293b;
+  margin: 0 0 12px;
+  line-height: 1.5;
+}
+
+.cortex-clarification__options {
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+  margin-bottom: 12px;
+}
+
+.cortex-clarification__option {
+  display: flex;
+  align-items: flex-start;
+  gap: 10px;
+  padding: 10px 12px;
+  border: 1px solid #e2e8f0;
+  border-radius: 8px;
+  background: white;
+  cursor: pointer;
+  transition: border-color 0.15s, background 0.15s;
+}
+
+.cortex-clarification__option:hover {
+  border-color: #94a3b8;
+}
+
+.cortex-clarification__option--selected {
+  border-color: #2563eb;
+  background: #eff6ff;
+}
+
+.cortex-clarification__option input[type="radio"] {
+  margin-top: 2px;
+  accent-color: #2563eb;
+}
+
+.cortex-clarification__option-content {
+  display: flex;
+  flex-direction: column;
+  gap: 2px;
+}
+
+.cortex-clarification__option-label {
+  font-size: 14px;
+  font-weight: 500;
+  color: #1e293b;
+}
+
+.cortex-clarification__option-desc {
+  font-size: 12px;
+  color: #64748b;
+  line-height: 1.4;
+}
+
+.cortex-clarification__custom-input {
+  width: 100%;
+  padding: 8px 12px;
+  border: 1px solid #e2e8f0;
+  border-radius: 6px;
+  font-size: 14px;
+  outline: none;
+  transition: border-color 0.15s;
+}
+
+.cortex-clarification__custom-input:focus {
+  border-color: #2563eb;
+}
+
+.cortex-clarification__actions {
+  display: flex;
+  gap: 8px;
+}
+
+.cortex-clarification__btn {
+  padding: 8px 16px;
+  border-radius: 6px;
+  font-size: 13px;
+  font-weight: 500;
+  cursor: pointer;
+  border: none;
+  transition: background 0.15s;
+}
+
+.cortex-clarification__btn--submit {
+  background: #2563eb;
+  color: white;
+}
+
+.cortex-clarification__btn--submit:hover:not(:disabled) {
+  background: #1d4ed8;
+}
+
+.cortex-clarification__btn--submit:disabled {
+  background: #94a3b8;
+  cursor: not-allowed;
+}
+
+.cortex-clarification__btn--skip {
+  background: transparent;
+  color: #64748b;
+  border: 1px solid #e2e8f0;
+}
+
+.cortex-clarification__btn--skip:hover {
+  background: #f1f5f9;
+}

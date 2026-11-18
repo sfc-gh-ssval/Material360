@@ -1,0 +1,86 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1000 500" font-family="Inter, Segoe UI, sans-serif">
+  <defs>
+    <linearGradient id="bg2" x1="0" y1="0" x2="0" y2="1">
+      <stop offset="0%" stop-color="#0f1729"/>
+      <stop offset="100%" stop-color="#1a2744"/>
+    </linearGradient>
+    <marker id="arr" markerWidth="8" markerHeight="6" refX="8" refY="3" orient="auto"><path d="M0,0 L8,3 L0,6" fill="#29B5E8"/></marker>
+    <marker id="arrG" markerWidth="8" markerHeight="6" refX="8" refY="3" orient="auto"><path d="M0,0 L8,3 L0,6" fill="#71D4A0"/></marker>
+    <marker id="arrP" markerWidth="8" markerHeight="6" refX="8" refY="3" orient="auto"><path d="M0,0 L8,3 L0,6" fill="#A78BFA"/></marker>
+  </defs>
+
+  <rect width="1000" height="500" fill="url(#bg2)" rx="12"/>
+
+  <!-- Title -->
+  <text x="500" y="35" text-anchor="middle" fill="#fff" font-size="18" font-weight="700">Material360 — Document Ingestion Flow</text>
+
+  <!-- Step 1: User -->
+  <rect x="40" y="70" width="160" height="60" rx="8" fill="#1e3050" stroke="#29B5E8" stroke-width="1.5"/>
+  <text x="120" y="97" text-anchor="middle" fill="#29B5E8" font-size="12" font-weight="600">User</text>
+  <text x="120" y="115" text-anchor="middle" fill="#7a9ab8" font-size="9">Drops PDF file</text>
+
+  <line x1="200" y1="100" x2="240" y2="100" stroke="#29B5E8" stroke-width="1.5" marker-end="url(#arr)"/>
+
+  <!-- Step 2: Upload API -->
+  <rect x="248" y="70" width="160" height="60" rx="8" fill="#1e3050" stroke="#71D4A0" stroke-width="1.5"/>
+  <text x="328" y="97" text-anchor="middle" fill="#71D4A0" font-size="12" font-weight="600">POST /api/upload</text>
+  <text x="328" y="115" text-anchor="middle" fill="#8ab8a0" font-size="9">FastAPI Router</text>
+
+  <line x1="408" y1="100" x2="448" y2="100" stroke="#71D4A0" stroke-width="1.5" marker-end="url(#arrG)"/>
+
+  <!-- Step 3: Stage -->
+  <rect x="456" y="70" width="160" height="60" rx="8" fill="#1e3050" stroke="#A78BFA" stroke-width="1.5"/>
+  <text x="536" y="97" text-anchor="middle" fill="#A78BFA" font-size="12" font-weight="600">@DRAWING_STAGE</text>
+  <text x="536" y="115" text-anchor="middle" fill="#9a8ab8" font-size="9">PUT file to Snowflake</text>
+
+  <line x1="536" y1="130" x2="536" y2="175" stroke="#A78BFA" stroke-width="1.5" marker-end="url(#arrP)"/>
+
+  <!-- Step 4: Stored Proc -->
+  <rect x="456" y="183" width="160" height="60" rx="8" fill="#1e3050" stroke="#A78BFA" stroke-width="1.5"/>
+  <text x="536" y="207" text-anchor="middle" fill="#A78BFA" font-size="11" font-weight="600">EXTRACT_DRAWING()</text>
+  <text x="536" y="227" text-anchor="middle" fill="#9a8ab8" font-size="9">Stored Procedure</text>
+
+  <line x1="616" y1="213" x2="670" y2="213" stroke="#A78BFA" stroke-width="1.5" marker-end="url(#arrP)"/>
+
+  <!-- Step 5: AI_COMPLETE -->
+  <rect x="678" y="183" width="280" height="60" rx="8" fill="#1e3050" stroke="#FBBF24" stroke-width="1.5"/>
+  <text x="818" y="207" text-anchor="middle" fill="#FBBF24" font-size="12" font-weight="600">AI_COMPLETE (Vision)</text>
+  <text x="818" y="227" text-anchor="middle" fill="#c4a060" font-size="9">claude-sonnet-4-6 · Reads PDF · Extracts JSON</text>
+
+  <line x1="818" y1="243" x2="818" y2="288" stroke="#FBBF24" stroke-width="1.5" marker-end="url(#arrP)"/>
+
+  <!-- Step 6: Parse & Insert -->
+  <rect x="678" y="296" width="280" height="80" rx="8" fill="#1e3050" stroke="#71D4A0" stroke-width="1.5"/>
+  <text x="818" y="322" text-anchor="middle" fill="#71D4A0" font-size="12" font-weight="600">Parse JSON Response</text>
+  <text x="700" y="344" fill="#8ab8a0" font-size="9">→ INSERT INTO DRAWING_EXTRACTIONS</text>
+  <text x="700" y="360" fill="#8ab8a0" font-size="9">→ INSERT INTO BOM_PARTS</text>
+
+  <line x1="678" y1="336" x2="620" y2="336" stroke="#71D4A0" stroke-width="1.5" marker-end="url(#arrG)"/>
+
+  <!-- Step 7: Tables -->
+  <rect x="370" y="296" width="242" height="80" rx="8" fill="#1e3050" stroke="#A78BFA" stroke-width="1.5"/>
+  <text x="491" y="322" text-anchor="middle" fill="#A78BFA" font-size="11" font-weight="600">DRAWING_EXTRACTIONS</text>
+  <text x="491" y="342" text-anchor="middle" fill="#9a8ab8" font-size="9">30+ columns: part, material, dims,</text>
+  <text x="491" y="358" text-anchor="middle" fill="#9a8ab8" font-size="9">BOM, translations, SEARCH_TEXT</text>
+
+  <line x1="491" y1="376" x2="491" y2="408" stroke="#A78BFA" stroke-width="1.5" marker-end="url(#arrP)"/>
+
+  <!-- Step 8: Cortex Search -->
+  <rect x="370" y="416" width="242" height="60" rx="8" fill="#1e3050" stroke="#29B5E8" stroke-width="1.5"/>
+  <text x="491" y="442" text-anchor="middle" fill="#29B5E8" font-size="12" font-weight="600">DRAWING_SEARCH</text>
+  <text x="491" y="460" text-anchor="middle" fill="#7a9ab8" font-size="9">Cortex Search auto-refreshes index</text>
+
+  <!-- Extraction prompt detail -->
+  <rect x="40" y="183" width="390" height="100" rx="8" fill="#162540" stroke="#FBBF24" stroke-width="0.8" stroke-opacity="0.4"/>
+  <text x="55" y="205" fill="#FBBF24" font-size="10" font-weight="600">System Prompt (46 lines)</text>
+  <text x="55" y="224" fill="#c4a060" font-size="9">- Detect source language</text>
+  <text x="55" y="240" fill="#c4a060" font-size="9">- Extract title block: part#, rev, material, finish, dims</text>
+  <text x="55" y="256" fill="#c4a060" font-size="9">- Extract BOM with quantities and descriptions</text>
+  <text x="55" y="272" fill="#c4a060" font-size="9">- Translate non-English fields to English</text>
+
+  <!-- Labels -->
+  <rect x="40" y="416" width="310" height="60" rx="8" fill="#162540" stroke="#71D4A0" stroke-width="0.8" stroke-opacity="0.4"/>
+  <text x="55" y="438" fill="#71D4A0" font-size="10" font-weight="600">Output per Drawing</text>
+  <text x="55" y="457" fill="#8ab8a0" font-size="9">Structured JSON → 30+ fields + BOM array + SEARCH_TEXT</text>
+  <text x="55" y="470" fill="#6b8a7a" font-size="8">Avg extraction time: 10-31 seconds per drawing</text>
+</svg>

@@ -1,0 +1,140 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1000 720" font-family="Inter, Segoe UI, sans-serif">
+  <defs>
+    <linearGradient id="bgGrad" x1="0" y1="0" x2="0" y2="1">
+      <stop offset="0%" stop-color="#0f1729"/>
+      <stop offset="100%" stop-color="#1a2744"/>
+    </linearGradient>
+    <linearGradient id="frontendGrad" x1="0" y1="0" x2="0" y2="1">
+      <stop offset="0%" stop-color="#29B5E8" stop-opacity="0.15"/>
+      <stop offset="100%" stop-color="#29B5E8" stop-opacity="0.05"/>
+    </linearGradient>
+    <linearGradient id="backendGrad" x1="0" y1="0" x2="0" y2="1">
+      <stop offset="0%" stop-color="#71D4A0" stop-opacity="0.15"/>
+      <stop offset="100%" stop-color="#71D4A0" stop-opacity="0.05"/>
+    </linearGradient>
+    <linearGradient id="snowflakeGrad" x1="0" y1="0" x2="0" y2="1">
+      <stop offset="0%" stop-color="#A78BFA" stop-opacity="0.15"/>
+      <stop offset="100%" stop-color="#A78BFA" stop-opacity="0.05"/>
+    </linearGradient>
+    <filter id="glow">
+      <feGaussianBlur stdDeviation="2" result="blur"/>
+      <feMerge><feMergeNode in="blur"/><feMergeNode in="SourceGraphic"/></feMerge>
+    </filter>
+  </defs>
+
+  <!-- Background -->
+  <rect width="1000" height="720" fill="url(#bgGrad)" rx="12"/>
+
+  <!-- Title -->
+  <text x="500" y="38" text-anchor="middle" fill="#ffffff" font-size="20" font-weight="700">Material360 — Solution Architecture</text>
+  <text x="500" y="56" text-anchor="middle" fill="#8899bb" font-size="11">Engineering Drawing Intelligence Platform</text>
+
+  <!-- FRONTEND LAYER -->
+  <rect x="30" y="72" width="940" height="155" rx="10" fill="url(#frontendGrad)" stroke="#29B5E8" stroke-width="1.5" stroke-opacity="0.5"/>
+  <text x="50" y="94" fill="#29B5E8" font-size="13" font-weight="700">FRONTEND</text>
+  <text x="155" y="94" fill="#5b7a9d" font-size="10">React 19 · TypeScript · Vite 8</text>
+
+  <!-- Frontend boxes -->
+  <rect x="55" y="108" width="190" height="55" rx="6" fill="#1e3050" stroke="#29B5E8" stroke-width="1" stroke-opacity="0.4"/>
+  <text x="150" y="131" text-anchor="middle" fill="#29B5E8" font-size="12" font-weight="600">Drawings</text>
+  <text x="150" y="150" text-anchor="middle" fill="#7a9ab8" font-size="9">List + Detail + 4 Tabs</text>
+
+  <rect x="265" y="108" width="190" height="55" rx="6" fill="#1e3050" stroke="#29B5E8" stroke-width="1" stroke-opacity="0.4"/>
+  <text x="360" y="131" text-anchor="middle" fill="#29B5E8" font-size="12" font-weight="600">Upload</text>
+  <text x="360" y="150" text-anchor="middle" fill="#7a9ab8" font-size="9">Drag-Drop + Progress</text>
+
+  <rect x="475" y="108" width="190" height="55" rx="6" fill="#1e3050" stroke="#29B5E8" stroke-width="1" stroke-opacity="0.4"/>
+  <text x="570" y="131" text-anchor="middle" fill="#29B5E8" font-size="12" font-weight="600">BOM Reconciliation</text>
+  <text x="570" y="150" text-anchor="middle" fill="#7a9ab8" font-size="9">Drawing vs BOM Cross-Ref</text>
+
+  <rect x="685" y="108" width="265" height="55" rx="6" fill="#1e3050" stroke="#29B5E8" stroke-width="1" stroke-opacity="0.4"/>
+  <text x="817" y="131" text-anchor="middle" fill="#29B5E8" font-size="12" font-weight="600">Agent Chat</text>
+  <text x="817" y="150" text-anchor="middle" fill="#7a9ab8" font-size="9">RAG Q&amp;A · Markdown Tables</text>
+
+  <!-- API layer bar -->
+  <rect x="55" y="176" width="895" height="28" rx="5" fill="#162540" stroke="#29B5E8" stroke-width="0.8" stroke-opacity="0.3"/>
+  <text x="500" y="194" text-anchor="middle" fill="#5b99c8" font-size="10" font-weight="600">api.ts (Axios) → Vite Proxy /api → localhost:8000</text>
+
+  <!-- Arrow Frontend to Backend -->
+  <line x1="500" y1="227" x2="500" y2="250" stroke="#29B5E8" stroke-width="2" stroke-dasharray="4,3" marker-end="url(#arrowBlue)"/>
+  <defs><marker id="arrowBlue" markerWidth="8" markerHeight="6" refX="8" refY="3" orient="auto"><path d="M0,0 L8,3 L0,6" fill="#29B5E8"/></marker></defs>
+  <text x="515" y="242" fill="#5b99c8" font-size="9">HTTP</text>
+
+  <!-- BACKEND LAYER -->
+  <rect x="30" y="255" width="940" height="165" rx="10" fill="url(#backendGrad)" stroke="#71D4A0" stroke-width="1.5" stroke-opacity="0.5"/>
+  <text x="50" y="277" fill="#71D4A0" font-size="13" font-weight="700">BACKEND</text>
+  <text x="140" y="277" fill="#5b9d7a" font-size="10">FastAPI · Uvicorn · Snowpark</text>
+
+  <!-- Router boxes -->
+  <rect x="55" y="290" width="280" height="115" rx="6" fill="#1e3050" stroke="#71D4A0" stroke-width="1" stroke-opacity="0.4"/>
+  <text x="195" y="310" text-anchor="middle" fill="#71D4A0" font-size="11" font-weight="600">Routers</text>
+  <text x="70" y="328" fill="#8ab8a0" font-size="9">POST /api/upload → Stage + Extract</text>
+  <text x="70" y="344" fill="#8ab8a0" font-size="9">GET  /api/extractions → Query Results</text>
+  <text x="70" y="360" fill="#8ab8a0" font-size="9">GET  /api/reconciliation → BOM View</text>
+  <text x="70" y="376" fill="#8ab8a0" font-size="9">GET  /api/files/:f/preview → File Download</text>
+  <text x="70" y="392" fill="#8ab8a0" font-size="9">POST /api/agent/chat → RAG Pipeline</text>
+
+  <!-- Services boxes -->
+  <rect x="360" y="290" width="290" height="115" rx="6" fill="#1e3050" stroke="#71D4A0" stroke-width="1" stroke-opacity="0.4"/>
+  <text x="505" y="310" text-anchor="middle" fill="#71D4A0" font-size="11" font-weight="600">Services</text>
+  <text x="375" y="332" fill="#8ab8a0" font-size="10" font-weight="600">snowflake.py</text>
+  <text x="375" y="348" fill="#7a9d8a" font-size="9">Snowpark session · OAuth auto-reconnect</text>
+  <text x="375" y="370" fill="#8ab8a0" font-size="10" font-weight="600">extraction.py</text>
+  <text x="375" y="386" fill="#7a9d8a" font-size="9">EXTRACT_DRAWING · search_drawings</text>
+  <text x="375" y="400" fill="#7a9d8a" font-size="9">agent_chat (Search → Context → AI_COMPLETE)</text>
+
+  <!-- Config box -->
+  <rect x="675" y="290" width="275" height="115" rx="6" fill="#1e3050" stroke="#71D4A0" stroke-width="1" stroke-opacity="0.4"/>
+  <text x="812" y="310" text-anchor="middle" fill="#71D4A0" font-size="11" font-weight="600">Config</text>
+  <text x="690" y="332" fill="#7a9d8a" font-size="9">Database: SNOWFLAKE_INTELLIGENCE</text>
+  <text x="690" y="348" fill="#7a9d8a" font-size="9">Schema:   ENGINEERING_DRAWINGS</text>
+  <text x="690" y="364" fill="#7a9d8a" font-size="9">Stage:    DRAWING_STAGE</text>
+  <text x="690" y="380" fill="#7a9d8a" font-size="9">Search:   DRAWING_SEARCH</text>
+  <text x="690" y="396" fill="#7a9d8a" font-size="9">Model:    claude-sonnet-4-6 (vision)</text>
+
+  <!-- Arrow Backend to Snowflake -->
+  <line x1="500" y1="420" x2="500" y2="447" stroke="#71D4A0" stroke-width="2" stroke-dasharray="4,3" marker-end="url(#arrowGreen)"/>
+  <defs><marker id="arrowGreen" markerWidth="8" markerHeight="6" refX="8" refY="3" orient="auto"><path d="M0,0 L8,3 L0,6" fill="#71D4A0"/></marker></defs>
+  <text x="515" y="438" fill="#5b9d7a" font-size="9">Snowpark</text>
+
+  <!-- SNOWFLAKE LAYER -->
+  <rect x="30" y="452" width="940" height="255" rx="10" fill="url(#snowflakeGrad)" stroke="#A78BFA" stroke-width="1.5" stroke-opacity="0.5"/>
+  <text x="50" y="474" fill="#A78BFA" font-size="13" font-weight="700">SNOWFLAKE</text>
+  <text x="155" y="474" fill="#7a6b9d" font-size="10">SNOWFLAKE_INTELLIGENCE.ENGINEERING_DRAWINGS</text>
+
+  <!-- Storage -->
+  <rect x="55" y="490" width="295" height="115" rx="6" fill="#1e3050" stroke="#A78BFA" stroke-width="1" stroke-opacity="0.4"/>
+  <text x="202" y="510" text-anchor="middle" fill="#A78BFA" font-size="11" font-weight="600">Storage</text>
+  <text x="70" y="530" fill="#9a8ab8" font-size="9.5">@DRAWING_STAGE — PDF / image drawing files</text>
+  <text x="70" y="548" fill="#9a8ab8" font-size="9.5">DRAWING_EXTRACTIONS — 30+ column metadata</text>
+  <text x="70" y="566" fill="#9a8ab8" font-size="9.5">BOM_PARTS — Bill of materials entries</text>
+  <text x="70" y="584" fill="#9a8ab8" font-size="9.5">V_BOM_RECONCILIATION — Drawing ↔ BOM view</text>
+  <text x="70" y="600" fill="#6b5b8a" font-size="8.5">SEARCH_TEXT: pipe-delimited multilingual index text</text>
+
+  <!-- AI Services -->
+  <rect x="370" y="490" width="580" height="200" rx="6" fill="#1e3050" stroke="#A78BFA" stroke-width="1" stroke-opacity="0.4"/>
+  <text x="660" y="510" text-anchor="middle" fill="#A78BFA" font-size="11" font-weight="600">Cortex AI Services</text>
+
+  <!-- Extraction sub-box -->
+  <rect x="385" y="522" width="260" height="78" rx="5" fill="#1a2540" stroke="#c4a8fa" stroke-width="0.6" stroke-opacity="0.3"/>
+  <text x="515" y="540" text-anchor="middle" fill="#c4a8fa" font-size="10" font-weight="600">Document Extraction</text>
+  <text x="395" y="557" fill="#8a7ab0" font-size="9">EXTRACT_DRAWING(filename)</text>
+  <text x="395" y="572" fill="#8a7ab0" font-size="9">→ AI_COMPLETE(claude-sonnet-4-6, vision)</text>
+  <text x="395" y="587" fill="#8a7ab0" font-size="9">→ Multilingual JSON: parts, dims, BOM</text>
+
+  <!-- Search sub-box -->
+  <rect x="660" y="522" width="275" height="78" rx="5" fill="#1a2540" stroke="#c4a8fa" stroke-width="0.6" stroke-opacity="0.3"/>
+  <text x="797" y="540" text-anchor="middle" fill="#c4a8fa" font-size="10" font-weight="600">Cortex Search</text>
+  <text x="672" y="557" fill="#8a7ab0" font-size="9">DRAWING_SEARCH service</text>
+  <text x="672" y="572" fill="#8a7ab0" font-size="9">→ Auto-refresh index on SEARCH_TEXT</text>
+  <text x="672" y="587" fill="#8a7ab0" font-size="9">→ Queried via SEARCH_PREVIEW()</text>
+
+  <!-- RAG sub-box -->
+  <rect x="385" y="610" width="550" height="65" rx="5" fill="#1a2540" stroke="#c4a8fa" stroke-width="0.6" stroke-opacity="0.3"/>
+  <text x="660" y="630" text-anchor="middle" fill="#c4a8fa" font-size="10" font-weight="600">Agent Chat RAG Pipeline</text>
+  <text x="395" y="648" fill="#8a7ab0" font-size="9">1. Cortex Search (top-5) → 2. Context Assembly → 3. AI_COMPLETE(claude-3-5-sonnet) → 4. Markdown Response</text>
+  <text x="395" y="663" fill="#6b5b8a" font-size="8.5">Structured prompt: compare drawings, tabulate results, cite part numbers</text>
+
+  <!-- Arrow between storage and AI -->
+  <line x1="350" y1="555" x2="370" y2="555" stroke="#A78BFA" stroke-width="1" stroke-dasharray="3,2"/>
+</svg>

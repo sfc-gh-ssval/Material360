@@ -1,0 +1,430 @@
+{
+  "BRK-20240101": {
+    "file_name": "EN_bracket_assy.pdf",
+    "source_language": "en",
+    "part_number": "BRK-20240101",
+    "part_name_original": "Mounting bracket assembly",
+    "part_name_en": "Mounting bracket assembly",
+    "revision": "02",
+    "material": "AL6061-T6",
+    "finish": "ANODIZE BLACK",
+    "cosmetic_requirement": null,
+    "weight_kg": 1.85,
+    "critical_dimensions": [
+      {
+        "value": "120 mm",
+        "tolerance": "±0.5",
+        "location": "Overall width",
+        "evidence": "\"120\" on front view"
+      },
+      {
+        "value": "80 mm",
+        "tolerance": "±0.5",
+        "location": "Overall height",
+        "evidence": "\"80\" on front view"
+      },
+      {
+        "value": "40 mm",
+        "tolerance": "±0.3",
+        "location": "Depth",
+        "evidence": "\"40\" on side view"
+      },
+      {
+        "value": "Ø10 (2x)",
+        "tolerance": "H7",
+        "location": "Mounting holes",
+        "evidence": "\"Ø10(2x)\" on front view"
+      },
+      {
+        "value": "70 mm",
+        "tolerance": "±0.2",
+        "location": "Hole spacing",
+        "evidence": "\"70\" between holes"
+      }
+    ],
+    "bounding_box": {
+      "x": 120,
+      "y": 80,
+      "z": 40,
+      "source": "Overall dims from front + side views"
+    },
+    "bom": null,
+    "missing_fields": [
+      "cosmetic_requirement"
+    ]
+  },
+  "KRP-30050200": {
+    "file_name": "DE_kabelrinne_platte.pdf",
+    "source_language": "de",
+    "part_number": "KRP-30050200",
+    "part_name_original": "KABELRINNENPLATTE",
+    "part_name_en": "Cable tray plate",
+    "revision": "01",
+    "material": "S355J2",
+    "finish": null,
+    "cosmetic_requirement": null,
+    "weight_kg": 8.42,
+    "critical_dimensions": [
+      {
+        "value": "300 mm",
+        "tolerance": "±1.0",
+        "location": "Gesamtlänge",
+        "evidence": "\"300\" Vorderansicht"
+      },
+      {
+        "value": "150 mm",
+        "tolerance": "±0.8",
+        "location": "Gesamtbreite",
+        "evidence": "\"150\" Vorderansicht"
+      },
+      {
+        "value": "8 mm",
+        "tolerance": "±0.3",
+        "location": "Blechstärke",
+        "evidence": "\"8\" Seitenansicht"
+      },
+      {
+        "value": "Ø14 (4x)",
+        "tolerance": "H9",
+        "location": "Befestigungslöcher",
+        "evidence": "\"Ø14(4x)\" Vorderansicht"
+      },
+      {
+        "value": "60 x 30",
+        "tolerance": "±0.5",
+        "location": "Schlitz Mitte",
+        "evidence": "\"60 x 30\" Schlitz"
+      }
+    ],
+    "bounding_box": {
+      "x": 300,
+      "y": 150,
+      "z": 8,
+      "source": "Abmessungen aus Vorder- und Seitenansicht"
+    },
+    "bom": [
+      {
+        "pos": 1,
+        "desc": "BLECH 8mm 300x150",
+        "mat": "S355J2",
+        "qty": 1
+      },
+      {
+        "pos": 2,
+        "desc": "SECHSKANTSCHRAUBE M12x30",
+        "mat": "8.8 VERZINKT",
+        "qty": 4
+      },
+      {
+        "pos": 3,
+        "desc": "UNTERLEGSCHEIBE M12",
+        "mat": "STAHL VERZINKT",
+        "qty": 4
+      }
+    ],
+    "missing_fields": [
+      "finish",
+      "cosmetic_requirement"
+    ]
+  },
+  "GS-FR-44210": {
+    "file_name": "FR_gousset.pdf",
+    "source_language": "fr",
+    "part_number": "GS-FR-44210",
+    "part_name_original": "GOUSSET DE RENFORT",
+    "part_name_en": "Reinforcement gusset",
+    "revision": "00",
+    "material": "S235JR",
+    "finish": "GALVANISATION À CHAUD",
+    "cosmetic_requirement": "CLASSE B - AUCUNE RAYURE VISIBLE",
+    "weight_kg": 2.15,
+    "critical_dimensions": [
+      {
+        "value": "150 mm",
+        "tolerance": "±0.5",
+        "location": "Côté du triangle",
+        "evidence": "\"150\" vue de face"
+      },
+      {
+        "value": "10 mm",
+        "tolerance": "±0.3",
+        "location": "Épaisseur",
+        "evidence": "\"10\" vue latérale"
+      },
+      {
+        "value": "Ø13 (3x)",
+        "tolerance": "H9",
+        "location": "Trous de montage",
+        "evidence": "\"Ø13(3x)\" vue de face"
+      },
+      {
+        "value": "70 mm",
+        "tolerance": "±0.3",
+        "location": "Entraxe vertical",
+        "evidence": "\"70\" entre trous"
+      },
+      {
+        "value": "70 mm",
+        "tolerance": "±0.3",
+        "location": "Entraxe horizontal",
+        "evidence": "\"70\" entre trous"
+      }
+    ],
+    "bounding_box": {
+      "x": 150,
+      "y": 150,
+      "z": 10,
+      "source": "Dimensions d'encombrement"
+    },
+    "bom": null,
+    "missing_fields": []
+  },
+  "SA-EN-78500": {
+    "file_name": "EN_shaft_adapter.pdf",
+    "source_language": "en",
+    "part_number": "SA-EN-78500",
+    "part_name_original": "Shaft adapter sleeve",
+    "part_name_en": "Shaft adapter sleeve",
+    "revision": "03",
+    "material": null,
+    "finish": "PASSIVATE PER QQ-P-35",
+    "cosmetic_requirement": "CLASS A - NO TOOL MARKS",
+    "weight_kg": 0.45,
+    "critical_dimensions": [
+      {
+        "value": "Ø60 mm",
+        "tolerance": "h6",
+        "location": "Outer diameter",
+        "evidence": "\"Ø60\" on front view"
+      },
+      {
+        "value": "Ø30 mm",
+        "tolerance": "H7",
+        "location": "Inner bore",
+        "evidence": "\"Ø30\" on front view"
+      },
+      {
+        "value": "45 mm",
+        "tolerance": "±0.1",
+        "location": "Length",
+        "evidence": "\"45\" on side view"
+      },
+      {
+        "value": "Ø5 (2x)",
+        "tolerance": "±0.05",
+        "location": "Set screw holes",
+        "evidence": "\"Ø5(2x)\" on front view"
+      },
+      {
+        "value": "0.8 µm Ra",
+        "tolerance": null,
+        "location": "Bore surface",
+        "evidence": "Surface finish symbol on bore"
+      }
+    ],
+    "bounding_box": {
+      "x": 60,
+      "y": 60,
+      "z": 45,
+      "source": "Ø60 envelope + 45 length"
+    },
+    "bom": null,
+    "missing_fields": [
+      "material"
+    ]
+  },
+  "TLS-IT-90200": {
+    "file_name": "IT_telaio_saldato.pdf",
+    "source_language": "it",
+    "part_number": "TLS-IT-90200",
+    "part_name_original": "TELAIO SALDATO PER QUADRO ELETTRICO",
+    "part_name_en": "Welded frame for electrical panel",
+    "revision": "01",
+    "material": "S235JR",
+    "finish": "VERNICIATURA RAL 7035",
+    "cosmetic_requirement": "CLASSE A - NESSUN SEGNO VISIBILE",
+    "weight_kg": 45.8,
+    "critical_dimensions": [
+      {
+        "value": "800 mm",
+        "tolerance": "±2.0",
+        "location": "Larghezza totale",
+        "evidence": "\"800\" vista frontale"
+      },
+      {
+        "value": "600 mm",
+        "tolerance": "±2.0",
+        "location": "Altezza totale",
+        "evidence": "\"600\" vista frontale"
+      },
+      {
+        "value": "200 mm",
+        "tolerance": "±1.0",
+        "location": "Profondità",
+        "evidence": "\"200\" vista laterale"
+      },
+      {
+        "value": "Ø14 (4x)",
+        "tolerance": "H9",
+        "location": "Fori angolari",
+        "evidence": "\"Ø14(4x)\" agli angoli"
+      },
+      {
+        "value": "40 mm",
+        "tolerance": "±0.5",
+        "location": "Spessore telaio",
+        "evidence": "\"40\" profilo del telaio"
+      }
+    ],
+    "bounding_box": null,
+    "bom": [
+      {
+        "pos": 1,
+        "desc": "PROFILO TUBOLARE 40x40x3 L=800",
+        "mat": "S235JR",
+        "qty": 2
+      },
+      {
+        "pos": 2,
+        "desc": "PROFILO TUBOLARE 40x40x3 L=520",
+        "mat": "S235JR",
+        "qty": 2
+      },
+      {
+        "pos": 3,
+        "desc": "PROFILO TUBOLARE 40x40x3 L=120",
+        "mat": "S235JR",
+        "qty": 4
+      },
+      {
+        "pos": 4,
+        "desc": "LAMIERA SP.2 800x600",
+        "mat": "S235JR",
+        "qty": 1
+      },
+      {
+        "pos": 5,
+        "desc": "CERNIERA 80mm",
+        "mat": "ACCIAIO ZINCATO",
+        "qty": 3
+      },
+      {
+        "pos": 6,
+        "desc": "CHIUSURA A LEVA",
+        "mat": "ACCIAIO ZINCATO",
+        "qty": 2
+      }
+    ],
+    "missing_fields": [
+      "bounding_box"
+    ]
+  },
+  "PC-ES-55100": {
+    "file_name": "ES_placa_cubierta.pdf",
+    "source_language": "es",
+    "part_number": "PC-ES-55100",
+    "part_name_original": "PLACA DE CUBIERTA",
+    "part_name_en": "Cover plate",
+    "revision": "00",
+    "material": null,
+    "finish": null,
+    "cosmetic_requirement": null,
+    "weight_kg": 0.95,
+    "critical_dimensions": [
+      {
+        "value": "200 mm",
+        "tolerance": "±0.5",
+        "location": "Longitud total",
+        "evidence": "\"200\" vista frontal"
+      },
+      {
+        "value": "120 mm",
+        "tolerance": "±0.5",
+        "location": "Ancho total",
+        "evidence": "\"120\" vista frontal"
+      },
+      {
+        "value": "3 mm",
+        "tolerance": "±0.2",
+        "location": "Espesor",
+        "evidence": "\"3\" vista lateral"
+      },
+      {
+        "value": "Ø7 (4x)",
+        "tolerance": "H9",
+        "location": "Agujeros de montaje",
+        "evidence": "\"Ø7(4x)\" esquinas"
+      },
+      {
+        "value": "160 x 80",
+        "tolerance": "±0.5",
+        "location": "Ventana de acceso",
+        "evidence": "\"160 x 80\" rectángulo central"
+      }
+    ],
+    "bounding_box": {
+      "x": 200,
+      "y": 120,
+      "z": 3,
+      "source": "Dimensiones de envolvente"
+    },
+    "bom": null,
+    "missing_fields": [
+      "material",
+      "finish",
+      "cosmetic_requirement"
+    ]
+  },
+  "SM-EN-66300": {
+    "file_name": "EN_sensor_mount_degraded.pdf",
+    "source_language": "en",
+    "part_number": "SM-EN-66300",
+    "part_name_original": "Sensor mounting plate",
+    "part_name_en": "Sensor mounting plate",
+    "revision": "01",
+    "material": "SS304",
+    "finish": "ELECTROPOLISH",
+    "cosmetic_requirement": "CLASS A - FOOD GRADE",
+    "weight_kg": 0.32,
+    "critical_dimensions": [
+      {
+        "value": "80 mm",
+        "tolerance": "±0.3",
+        "location": "Overall length",
+        "evidence": "\"80\" front view"
+      },
+      {
+        "value": "50 mm",
+        "tolerance": "±0.3",
+        "location": "Overall width",
+        "evidence": "\"50\" front view"
+      },
+      {
+        "value": "6 mm",
+        "tolerance": "±0.1",
+        "location": "Thickness",
+        "evidence": "\"6\" side view"
+      },
+      {
+        "value": "Ø8 (2x)",
+        "tolerance": "H7",
+        "location": "Mounting holes",
+        "evidence": "\"Ø8(2x)\" front view"
+      },
+      {
+        "value": "20 x 20",
+        "tolerance": "±0.2",
+        "location": "Sensor cutout",
+        "evidence": "\"20 x 20\" central slot"
+      }
+    ],
+    "bounding_box": {
+      "x": 80,
+      "y": 50,
+      "z": 6,
+      "source": "Overall dims from front + side views"
+    },
+    "bom": null,
+    "missing_fields": []
+  }
+}

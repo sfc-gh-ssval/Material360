@@ -1,0 +1,90 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1000 400" font-family="Inter, Segoe UI, sans-serif">
+  <defs>
+    <linearGradient id="bg3" x1="0" y1="0" x2="0" y2="1">
+      <stop offset="0%" stop-color="#0f1729"/>
+      <stop offset="100%" stop-color="#1a2744"/>
+    </linearGradient>
+    <marker id="a1" markerWidth="8" markerHeight="6" refX="8" refY="3" orient="auto"><path d="M0,0 L8,3 L0,6" fill="#29B5E8"/></marker>
+    <marker id="a2" markerWidth="8" markerHeight="6" refX="8" refY="3" orient="auto"><path d="M0,0 L8,3 L0,6" fill="#A78BFA"/></marker>
+    <marker id="a3" markerWidth="8" markerHeight="6" refX="8" refY="3" orient="auto"><path d="M0,0 L8,3 L0,6" fill="#FBBF24"/></marker>
+    <marker id="a4" markerWidth="8" markerHeight="6" refX="8" refY="3" orient="auto"><path d="M0,0 L8,3 L0,6" fill="#71D4A0"/></marker>
+  </defs>
+
+  <rect width="1000" height="400" fill="url(#bg3)" rx="12"/>
+
+  <text x="500" y="35" text-anchor="middle" fill="#fff" font-size="18" font-weight="700">Material360 — Agent Chat RAG Pipeline</text>
+
+  <!-- Step 1: User Question -->
+  <rect x="40" y="80" width="180" height="70" rx="8" fill="#1e3050" stroke="#29B5E8" stroke-width="1.5"/>
+  <text x="130" y="108" text-anchor="middle" fill="#29B5E8" font-size="12" font-weight="600">User Question</text>
+  <text x="130" y="128" text-anchor="middle" fill="#7a9ab8" font-size="9">"Which drawings use</text>
+  <text x="130" y="141" text-anchor="middle" fill="#7a9ab8" font-size="9">S235JR steel?"</text>
+
+  <line x1="220" y1="115" x2="265" y2="115" stroke="#29B5E8" stroke-width="1.5" marker-end="url(#a1)"/>
+  <text x="240" y="108" fill="#5b99c8" font-size="8">POST</text>
+
+  <!-- Step 2: Agent Chat Endpoint -->
+  <rect x="273" y="80" width="180" height="70" rx="8" fill="#1e3050" stroke="#71D4A0" stroke-width="1.5"/>
+  <text x="363" y="108" text-anchor="middle" fill="#71D4A0" font-size="12" font-weight="600">/api/agent/chat</text>
+  <text x="363" y="128" text-anchor="middle" fill="#8ab8a0" font-size="9">agent_chat(question)</text>
+  <text x="363" y="141" text-anchor="middle" fill="#6b8a7a" font-size="8">extraction.py</text>
+
+  <line x1="363" y1="150" x2="363" y2="185" stroke="#A78BFA" stroke-width="1.5" marker-end="url(#a2)"/>
+  <text x="373" y="172" fill="#7a6b9d" font-size="8">Step 1</text>
+
+  <!-- Step 3: Cortex Search -->
+  <rect x="250" y="193" width="225" height="70" rx="8" fill="#1e3050" stroke="#A78BFA" stroke-width="1.5"/>
+  <text x="363" y="218" text-anchor="middle" fill="#A78BFA" font-size="12" font-weight="600">Cortex Search</text>
+  <text x="363" y="238" text-anchor="middle" fill="#9a8ab8" font-size="9">SEARCH_PREVIEW('DRAWING_SEARCH')</text>
+  <text x="363" y="252" text-anchor="middle" fill="#6b5b8a" font-size="8">Returns top-5 matching SEARCH_TEXT</text>
+
+  <line x1="475" y1="228" x2="530" y2="228" stroke="#A78BFA" stroke-width="1.5" marker-end="url(#a2)"/>
+  <text x="498" y="222" fill="#7a6b9d" font-size="8">Step 2</text>
+
+  <!-- Step 4: Context Assembly -->
+  <rect x="538" y="193" width="200" height="70" rx="8" fill="#1e3050" stroke="#FBBF24" stroke-width="1.5"/>
+  <text x="638" y="218" text-anchor="middle" fill="#FBBF24" font-size="12" font-weight="600">Context Assembly</text>
+  <text x="638" y="238" text-anchor="middle" fill="#c4a060" font-size="9">Drawing 1: {SEARCH_TEXT}</text>
+  <text x="638" y="252" text-anchor="middle" fill="#c4a060" font-size="9">Drawing 2: {SEARCH_TEXT} ...</text>
+
+  <line x1="738" y1="228" x2="783" y2="228" stroke="#FBBF24" stroke-width="1.5" marker-end="url(#a3)"/>
+  <text x="756" y="222" fill="#c4a060" font-size="8">Step 3</text>
+
+  <!-- Step 5: AI_COMPLETE -->
+  <rect x="791" y="180" width="175" height="96" rx="8" fill="#1e3050" stroke="#FBBF24" stroke-width="1.5"/>
+  <text x="878" y="208" text-anchor="middle" fill="#FBBF24" font-size="12" font-weight="600">AI_COMPLETE</text>
+  <text x="878" y="228" text-anchor="middle" fill="#c4a060" font-size="9">claude-3-5-sonnet</text>
+  <text x="878" y="248" text-anchor="middle" fill="#8a7a60" font-size="8">System: "You are Material360</text>
+  <text x="878" y="260" text-anchor="middle" fill="#8a7a60" font-size="8">assistant. Use tables."</text>
+
+  <line x1="878" y1="276" x2="878" y2="310" stroke="#71D4A0" stroke-width="1.5" marker-end="url(#a4)"/>
+  <text x="890" y="297" fill="#5b9d7a" font-size="8">Step 4</text>
+
+  <!-- Step 6: Markdown Response -->
+  <rect x="748" y="318" width="218" height="65" rx="8" fill="#1e3050" stroke="#71D4A0" stroke-width="1.5"/>
+  <text x="857" y="343" text-anchor="middle" fill="#71D4A0" font-size="12" font-weight="600">Markdown Response</text>
+  <text x="857" y="363" text-anchor="middle" fill="#8ab8a0" font-size="9">Tables, comparisons, citations</text>
+  <text x="857" y="376" text-anchor="middle" fill="#6b8a7a" font-size="8">react-markdown + remark-gfm</text>
+
+  <line x1="748" y1="350" x2="680" y2="350" stroke="#71D4A0" stroke-width="1.5" marker-end="url(#a4)"/>
+
+  <!-- User sees result -->
+  <rect x="480" y="318" width="192" height="65" rx="8" fill="#1e3050" stroke="#29B5E8" stroke-width="1.5"/>
+  <text x="576" y="343" text-anchor="middle" fill="#29B5E8" font-size="12" font-weight="600">Agent Chat UI</text>
+  <text x="576" y="363" text-anchor="middle" fill="#7a9ab8" font-size="9">Formatted tables, lists,</text>
+  <text x="576" y="376" text-anchor="middle" fill="#7a9ab8" font-size="9">part number references</text>
+
+  <!-- Example output box -->
+  <rect x="40" y="193" width="192" height="180" rx="8" fill="#162540" stroke="#71D4A0" stroke-width="0.8" stroke-opacity="0.4"/>
+  <text x="55" y="215" fill="#71D4A0" font-size="10" font-weight="600">Example SEARCH_TEXT</text>
+  <text x="55" y="235" fill="#7a9d8a" font-size="8">Part: TLS-IT-90200</text>
+  <text x="55" y="249" fill="#7a9d8a" font-size="8">WELDED FRAME FOR ELECTRICAL PANEL</text>
+  <text x="55" y="263" fill="#7a9d8a" font-size="8">Rev 01 | Material: S235JR</text>
+  <text x="55" y="277" fill="#7a9d8a" font-size="8">Finish: Painting RAL 7035</text>
+  <text x="55" y="291" fill="#7a9d8a" font-size="8">Weight: 45.8 kg</text>
+  <text x="55" y="305" fill="#7a9d8a" font-size="8">Language: Italian</text>
+  <text x="55" y="319" fill="#7a9d8a" font-size="8">Original: TELAIO SALDATO</text>
+  <text x="55" y="333" fill="#7a9d8a" font-size="8">Cosmetic: Class A</text>
+  <text x="55" y="355" fill="#5b8a6a" font-size="7.5">Pipe-delimited, includes translated</text>
+  <text x="55" y="367" fill="#5b8a6a" font-size="7.5">+ original terms for multilingual search</text>
+</svg>
