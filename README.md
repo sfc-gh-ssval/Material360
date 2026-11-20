@@ -95,18 +95,36 @@ Material360/
 ├── synthetic_drawings/       # 7 test PDFs + generator script + ground truth
 ├── cortex-agent-clarification/  # Reusable Cortex Agent SSE/clarification component
 ├── docs/                     # Architecture docs + SVG diagrams
+├── sql/                      # Snowflake DDL + seed + sample load (run in order)
 └── .env.example              # Connection / warehouse settings template
 ```
 
-## Snowflake Objects Required
+## Snowflake Objects
 
-These must exist in `SNOWFLAKE_INTELLIGENCE.ENGINEERING_DRAWINGS`:
+All objects live in `SNOWFLAKE_INTELLIGENCE.ENGINEERING_DRAWINGS` and are defined in [`sql/`](sql):
 
-| Object | Type | Purpose |
-|--------|------|---------|
-| `DRAWING_STAGE` | Stage | PDF file storage |
-| `DRAWING_EXTRACTIONS` | Table | Extracted metadata (30+ columns) |
-| `BOM_PARTS` | Table | Bill of materials entries |
-| `V_BOM_RECONCILIATION` | View | Drawing-to-BOM cross-reference |
-| `EXTRACT_DRAWING` | Stored Procedure | Calls AI_COMPLETE with vision to parse PDFs |
-| `DRAWING_SEARCH` | Cortex Search Service | Semantic search over SEARCH_TEXT column |
+| Script | Creates | Purpose |
+|--------|---------|---------|
+| `00_setup.sql` | Database, schema, optional `MATERIAL360_WH` | Container + compute |
+| `01_stage_and_tables.sql` | `DRAWING_STAGE`, `DRAWING_EXTRACTIONS`, `BOM_PARTS` | Drawing files (SSE + directory table), extracted metadata, BOM master |
+| `02_views.sql` | `V_BOM_RECONCILIATION` | Drawing ↔ BOM reconciliation (resolved value + source) |
+| `03_procedure.sql` | `EXTRACT_DRAWING(file_name)` | AI_COMPLETE vision extraction → row in `DRAWING_EXTRACTIONS` |
+| `04_search_service.sql` | `DRAWING_SEARCH` | Cortex Search over `SEARCH_TEXT` for Agent Chat |
+| `05_seed_bom.sql` | Rows in `BOM_PARTS` | Sample BOM for the 7 synthetic drawings |
+| `06_load_synthetic_drawings.sql` | Rows in `DRAWING_EXTRACTIONS` | Uploads + extracts the sample PDFs |
+
+Scripts 00–05 are idempotent (`IF NOT EXISTS` for stage/tables/search service; the view and procedure are `CREATE OR REPLACE`). Script 06 inserts a new extraction row each time it runs.
+
+### Deploy
+
+Set the warehouse in `04_search_service.sql` (default `MATERIAL360_WH`), then run from the repo root:
+
+```bash
+for f in sql/0*.sql; do
+  snow sql -c <connection> --enable-templating NONE -f "$f"
+done
+```
+
+`--enable-templating NONE` is required: the extraction prompt contains `GD&T`, which Snowflake CLI otherwise treats as a `&T` variable. Scripts 00–05 can also be run in a Snowsight worksheet; 06 needs a client for `PUT` (or use the app's Upload page).
+
+The role used needs `SNOWFLAKE.CORTEX_USER` and access to `claude-sonnet-4-6` in your region (or cross-region inference enabled).
